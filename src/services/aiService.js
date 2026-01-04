@@ -104,6 +104,7 @@ IMPORTANTE SOBRE LA CREACIÓN DE LA PALABRA:
 - No tiene que sonar bonita, tiene que sentirse VERDADERA
 - Debe ser pronunciable pero no necesariamente armónica
 - Debe sentirse coherente con las palabras de origen
+- **OBLIGATORIO**: La palabra inventada debe estar SIEMPRE en minúsculas (lowercase)
 
 DEFINICIÓN:
 - Explica qué nombra la palabra

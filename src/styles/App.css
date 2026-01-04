@@ -1,30 +1,65 @@
 /* Import animations */
 @import './animations.css';
 
-/* Fuente oficial del proyecto - Optima */
+/* Fuente oficial del proyecto - Optima - Familia completa con soporte español */
 @font-face {
   font-family: 'Optima';
-  src: url('/fonts/Optima_Medium.ttf') format('truetype');
+  src: url('/fonts/optima/medium/Optima_Medium.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
 }
 
 @font-face {
   font-family: 'Optima';
-  src: url('/fonts/Optima_Bold.ttf') format('truetype');
+  src: url('/fonts/optima/bold/Optima_Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
 }
 
 @font-face {
   font-family: 'Optima';
-  src: url('/fonts/Optima_Italic.ttf') format('truetype');
+  src: url('/fonts/optima/italic/Optima_Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
 }
+
+/* Declaraciones preparadas para pesos adicionales cuando estén disponibles */
+/* Descomenta y ajusta las rutas cuando tengas los archivos */
+
+/*
+@font-face {
+  font-family: 'Optima';
+  src: url('/fonts/optima/regular/Optima_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('/fonts/optima/bold-italic/Optima_BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('/fonts/optima/light/Optima_Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
+}
+*/
 
 /* Reset y variables CSS - Paleta Cinematic #TodosSomosAliens */
 :root {
@@ -196,7 +231,7 @@
 }
 
 body {
-  font-family: 'Optima', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Optima', 'Helvetica Neue', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: transparent;
   color: var(--text-primary);
   line-height: 1.6;
@@ -507,16 +542,16 @@ body::before {
 
 .generated-word {
   font-size: var(--font-size-display);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
   background: linear-gradient(135deg, var(--light-halo), var(--glow-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: var(--space-4);
-  text-transform: lowercase;
   text-shadow: 0 0 30px rgba(225, 216, 199, 0.3);
+  text-rendering: optimizeLegibility;
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
