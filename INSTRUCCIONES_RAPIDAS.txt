@@ -1,0 +1,32 @@
+🚀 INSTRUCCIONES RÁPIDAS - APLICACIÓN PALABRAS EMOCIONALES
+
+✅ APLICACIÓN COMPLETA - Lista para usar
+
+🔥 PARA INICIAR RÁPIDAMENTE:
+
+1. Abrir terminal en la carpeta imaginario-app
+2. Ejecutar: npm run dev
+3. Abrir navegador en: http://localhost:5173
+4. Configurar API key: abrir consola (F12) y pegar:
+
+window.OPENAI_API_KEY = "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"
+
+🎬 FUNCIONAMIENTO:
+- 3 campos para palabras emocionales
+- Botón genera palabra + definición + consejo
+- Diseño cinematográfico oficial del poster con paleta #TodosSomosAliens
+- Animaciones fluidas con micro-interacciones modernas
+
+📁 ARCHIVOS CLAVE:
+- src/App.jsx - Componente principal
+- src/services/aiService.js - IA OpenAI
+- images/alien.png - Imagen campaña
+- CONFIGURACION.txt - Instrucciones detalladas
+
+⚡ CARACTERÍSTICAS AVANZADAS:
+- Manejo automático de rate limiting
+- Reintentos con backoff exponencial
+- Mensajes de error informativos
+- Recuperación automática de errores temporales
+
+¡Disfruta tu souvenir para #TodosSomosAliens! 👽✨

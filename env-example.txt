@@ -1,0 +1,6 @@
+# OpenAI API Configuration
+# Obtén tu API key desde: https://platform.openai.com/api-keys
+VITE_OPENAI_API_KEY=tu_clave_de_api_de_openai_aqui
+
+# Nota: Esta aplicación usa OpenAI API directamente desde el navegador
+# En un entorno de producción, considera usar un backend para mayor seguridad
