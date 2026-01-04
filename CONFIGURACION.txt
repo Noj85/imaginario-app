@@ -12,7 +12,7 @@ OPCIÓN PRINCIPAL - Configuración en navegador (Más confiable):
 1. Abre la aplicación con: npm run dev
 2. Abre la consola del navegador (F12 → Console)
 3. Copia y pega esta línea:
-   window.OPENAI_API_KEY = "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"
+   window.OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE"
 4. Presiona Enter
 5. La aplicación ahora funcionará
 

@@ -25,7 +25,30 @@ dist-ssr
 
 # Environment variables
 .env
+.env.*
+*.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Secrets and keys
+*.key
+*.secret
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+*.jks
+*.keystore
+
+# API keys and tokens
+api_key
+*.api_key
+*api_key*
+
+# Temporary files
+env-config.txt
+setup-env.bak

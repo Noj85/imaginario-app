@@ -3,7 +3,7 @@
 # Script para configurar la API key de OpenAI
 echo "Configurando API key de OpenAI..."
 
-API_KEY="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"
+API_KEY="YOUR_OPENAI_API_KEY_HERE"
 
 # Crear archivo .env.local
 cat > .env.local << EOF
