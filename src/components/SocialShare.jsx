@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import html2canvas from 'html2canvas'
+import ShareableImage from './ShareableImage'
 
 const SocialShare = ({ result }) => {
   const [copySuccess, setCopySuccess] = useState(false)
@@ -26,15 +27,18 @@ Significado: ${result.definition}
     try {
       // Esperar un poco para que el DOM se renderice completamente
       setTimeout(async () => {
-        const element = document.querySelector('.result-card')
+        const element = document.querySelector('.shareable-image-container')
         if (element) {
           const canvas = await html2canvas(element, {
-            backgroundColor: '#0F1111', // Color de fondo de la app
+            backgroundColor: 'transparent',
             scale: 2, // Alta resolución
             useCORS: true,
             allowTaint: true,
-            width: 600,
-            height: 400
+            width: 1080,
+            height: 1080,
+            logging: false, // Desactivar logs para mejor rendimiento
+            imageTimeout: 0, // No timeout para imágenes
+            removeContainer: false // Mantener el contenedor
           })
 
           const imageUrl = canvas.toDataURL('image/png')
@@ -101,15 +105,11 @@ Significado: ${result.definition}
     downloadImage()
 
     // También copiar el texto al clipboard como respaldo
-    navigator.clipboard.writeText(`${shareText}\n\n${appUrl}`).then(() => {
+    navigator.clipboard.writeText(shareText).then(() => {
       setCopySuccess(true)
       setTimeout(() => setCopySuccess(false), 3000)
-      // Abrir TikTok para que el usuario pueda subir la imagen descargada
-      setTimeout(() => {
-        window.open('https://www.tiktok.com/', '_blank', 'noopener,noreferrer')
-      }, 500)
     }).catch(() => {
-      window.open('https://www.tiktok.com/', '_blank', 'noopener,noreferrer')
+      console.log('No se pudo copiar al clipboard')
     })
   }
 
@@ -118,16 +118,11 @@ Significado: ${result.definition}
     downloadImage()
 
     // También copiar el texto al clipboard como respaldo
-    navigator.clipboard.writeText(`${shareText}\n\n${appUrl}`).then(() => {
+    navigator.clipboard.writeText(shareText).then(() => {
       setCopySuccess(true)
       setTimeout(() => setCopySuccess(false), 3000)
-      // Abrir Instagram para que el usuario pueda subir la imagen descargada
-      setTimeout(() => {
-        window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer')
-      }, 500)
     }).catch(() => {
-      // Fallback: abrir Instagram
-      window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer')
+      console.log('No se pudo copiar al clipboard')
     })
   }
 
@@ -154,8 +149,27 @@ Significado: ${result.definition}
   }
 
   return (
-    <div className="social-share-section">
+    <>
+      {/* Componente oculto para generar la imagen compartible */}
+      <ShareableImage result={result} />
+
+      <div className="social-share-section">
       <h3 className="share-title">Comparte tu palabra</h3>
+
+      {/* Botón dedicado para descargar imagen */}
+      <div className="download-section">
+        <button
+          onClick={downloadImage}
+          className="download-image-button"
+          aria-label="Descarga tu palabra como imagen para compartir en redes sociales"
+        >
+          Descarga como imagen
+        </button>
+        <p className="download-description">
+          Comparte en Instagram, TikTok u otras redes
+        </p>
+      </div>
+
       <div className="social-buttons">
         <button
           onClick={shareToInstagram}
@@ -272,6 +286,7 @@ Significado: ${result.definition}
         Comparte para que más personas encuentren su palabra emocional
       </p>
     </div>
+    </>
   )
 }
 
