@@ -1,4 +1,5 @@
 import React from 'react'
+import SocialShare from './SocialShare'
 
 const ResultDisplay = ({ result, onReset }) => {
   if (!result) return null
@@ -19,6 +20,8 @@ const ResultDisplay = ({ result, onReset }) => {
           <h3>PARA ACOMPAÑARTE</h3>
           <p className="advice">{result.advice}</p>
         </div>
+
+        <SocialShare result={result} />
 
         <button onClick={onReset} className="reset-button">
           Nombrar otra

@@ -675,8 +675,8 @@ body::before {
   }
 
   .support-logo {
-    max-height: 45px;
-    max-width: 120px;
+    max-height: 22px;
+    max-width: 66px;
   }
 }
 
@@ -691,6 +691,7 @@ body::before {
 .support-section:hover {
   opacity: 1;
 }
+
 
 .support-text {
   font-size: var(--font-size-xs);
@@ -718,8 +719,8 @@ body::before {
 }
 
 .support-logo {
-  max-height: 60px;
-  max-width: 180px;
+  max-height: 30px;
+  max-width: 90px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -731,4 +732,186 @@ body::before {
 .support-logo:hover {
   opacity: 1;
   filter: grayscale(0%) brightness(1.1);
+}
+
+/* Social Share Section */
+.social-share-section {
+  margin-bottom: var(--space-8);
+  padding: var(--space-6) var(--space-8);
+  border-radius: var(--border-radius-lg);
+  background: rgba(44, 59, 54, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.share-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--glow-accent);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.social-button {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(176, 185, 176, 0.3);
+  border-radius: var(--border-radius-md);
+  background: rgba(44, 59, 54, 0.2);
+  color: var(--light-halo);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+.social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.social-button:hover {
+  background: rgba(44, 59, 54, 0.4);
+  border-color: var(--glow-accent);
+  transform: translateY(-1px);
+}
+
+.social-button:active {
+  transform: translateY(0);
+}
+
+.social-button.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-button.facebook:hover {
+  background: #1877f2;
+}
+
+.social-button.twitter:hover {
+  background: #1da1f2;
+}
+
+.social-button.whatsapp:hover {
+  background: #25d366;
+}
+
+.social-button.tiktok:hover {
+  background: linear-gradient(45deg, #ff0050, #00f2ea);
+}
+
+.social-button.copy-link:hover {
+  background: var(--glow-accent);
+  color: var(--background-black);
+}
+
+.emoji-fallback {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.copy-feedback {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glow-accent);
+  color: var(--background-black);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.share-description {
+  font-size: var(--font-size-xs);
+  color: var(--skin-neutral);
+  opacity: 0.7;
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+/* Instagram Footer Link */
+.instagram-footer {
+  margin-top: var(--space-8);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(58, 61, 63, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(79, 87, 74, 0.3);
+  border-radius: var(--border-radius-lg);
+  color: var(--light-halo);
+  text-decoration: none;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition-base);
+  opacity: 0.9;
+}
+
+.instagram-link:hover {
+  background: rgba(58, 61, 63, 0.8);
+  border-color: var(--glow-accent);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.instagram-icon {
+  font-size: 1.1rem;
+}
+
+.instagram-text {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Responsive adjustments for social sharing */
+@media (max-width: 640px) {
+  .social-buttons {
+    gap: var(--space-2);
+  }
+
+  .social-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .social-share-section {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .instagram-link {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-xs);
+  }
 }
