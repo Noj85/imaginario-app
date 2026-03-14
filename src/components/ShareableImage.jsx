@@ -3,10 +3,16 @@ import React from 'react'
 const ShareableImage = ({ result }) => {
   if (!result) return null
 
-  // Truncar la definición si es muy larga (máximo 120 caracteres para que quepa bien)
-  const truncatedDefinition = result.definition.length > 120
-    ? result.definition.substring(0, 117) + '...'
-    : result.definition
+  // Ajustar tamaño de fuente según longitud para que quepa la definición completa
+  const getDefinitionFontSize = (length) => {
+    if (length <= 100) return 38
+    if (length <= 150) return 34
+    if (length <= 200) return 30
+    if (length <= 280) return 26
+    if (length <= 400) return 22
+    return 18
+  }
+  const definitionFontSize = getDefinitionFontSize(result.definition.length)
 
   return (
     <div className="shareable-image-container">
@@ -19,9 +25,12 @@ const ShareableImage = ({ result }) => {
             {result.word}
           </div>
 
-          {/* Definición - truncada con ellipsis, alineada a la izquierda */}
-          <div className="shareable-definition">
-            {truncatedDefinition}
+          {/* Definición completa - tamaño dinámico según longitud */}
+          <div
+            className="shareable-definition"
+            style={{ fontSize: `${definitionFontSize}px` }}
+          >
+            {result.definition}
           </div>
         </div>
 

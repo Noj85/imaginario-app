@@ -8,7 +8,7 @@ const WordInputs = ({ words, onWordsChange }) => {
     onWordsChange(newWords)
   }
 
-  const placeholder = 'Una palabra que sientes...'
+  const placeholder = 'Como te sientes en una palabra...'
 
   return (
     <div className="word-inputs">

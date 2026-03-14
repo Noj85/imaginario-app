@@ -4,10 +4,9 @@ const SupportLogos = () => {
   // Array de logos de apoyo - fácilmente expandible para futuras alianzas
   const supportLogos = [
     { src: '/images/losimaginarios.png', alt: 'Los Imaginarios' },
-    { src: '/images/piafproducciones.png', alt: 'Piaf Producciones' }
-    // Aquí se pueden agregar más logos fácilmente:
-    // { src: '/images/organizacion1.png', alt: 'Organización 1' },
-    // { src: '/images/organizacion2.png', alt: 'Organización 2' },
+    { src: '/images/piafproducciones.png', alt: 'Piaf Producciones' },
+    { src: '/images/prosame.png', alt: 'Prosame' },
+    { src: '/images/tuconsejeria.png', alt: 'Tu Consejería' },
   ]
 
   return (
