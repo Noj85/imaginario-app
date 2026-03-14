@@ -973,6 +973,7 @@ body::before {
   width: 1080px;
   height: 1080px;
   overflow: hidden;
+  background-color: #050606;
 }
 
 .shareable-background {
@@ -982,7 +983,7 @@ body::before {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: var(--background-black);
+  background-color: #050606;
   filter: blur(22px) brightness(0.4) saturate(0.65);
   position: relative;
 }
